@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Scrapbook</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4e4c1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .scrapbook {
+            width: 300px;
+            height: 400px;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            border: 4px solid #d4a373;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(#d4a373, #C69C6D);
+        }
+        .page {
+            width: 100%;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            scroll-snap-align: start;
+            border-bottom: 2px solid #b5835a;
+        }
+        .page img {
+            width: 180px;
+            height: 150px;
+            margin: 15px;
+            border-radius: 12px;
+            border: 2px solid #fff;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .page-text {
+            max-width: 260px;
+            font-size: 16px;
+            font-weight: normal;
+            text-align: justify;
+            line-height: 1.5;
+        }
+        /* Audio controls styling */
+        .audio-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .audio-container button {
+            background-color: #d4a373;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .audio-container button:hover {
+            background-color: #b5835a;
+        }
+    </style>
+</head>
+<body>
+    <div class="scrapbook">
+        <div class="page">
+            Happy Valentine's Day! ❤️
+            <img src="https://media.tenor.com/sZH8h0YuZBoAAAAi/penguin-dance.gif" alt="Valentine GIF">
+        </div>
+        <div class="page">
+            <div class="page-text">Scroll to see</div>
+            <img src="d:\Valentine\4.jpg" alt="Memory 1">
+            <img src="d:\Valentine\7.jpg" alt="Memory 2">
+        </div>
+        <div class="page">
+            <div class="page-text">Scroll pa</div>
+            <img src="d:\Valentine\5.jpg" alt="Memory 3">
+            <img src="d:\Valentine\8.jpg" alt="Memory 4">
+        </div>
+        <div class="page">
+            <div class="page-text">Isa pa</div>
+            <img src="d:\Valentine\6.jpg" alt="Memory 5">
+            <img src="d:\Valentine\9.jpg" alt="Memory 6">
+        </div>
+        <div class="page">
+            <div class="page-text">last Scroll nalang</div>
+            <img src="d:\Valentine\photo 2.jpg" alt="Memory 7">
+            <img src="d:\Valentine\image 1 (2).jpg" alt="Memory 8">
+        </div>
+        <div class="page">
+            Happy Valentine's Day! ❤️
+            <img src="https://media1.tenor.com/m/MrktnYw8V14AAAAC/goma-goma-and-peach.gif" width="833" height="833" alt="a cartoon cat is covering its face with its hand while hearts fly around it ." style="max-width: 833px;">
+            I have a short message below on this page:>>
+        </div>
+        <div class="page" style="min-height: 600px;">
+            <div class="page-text">
+                Hi love, I just wanted to say that I love you even though I don't properly know you yet, like "What are the things you like?" "What color do you like?" "Your favorite things," and more. It's kinda crazy, right? Like last month or week, we were just strangers, and we turn into lovers.
+                <br><br>
+                To tell you the truth, I only expected that you would turn me down HAHAHA So yeah, I was ready for the consequence at that time. But happily, you accepted it and it makes me smile. My smile that time was unbearable to hide.
+                <br><br>
+                I hope you read this. Although it's not much, I will try to give you something more next time. I'm sorry I can't provide much today because I'm broke, but I'll promise. I hope that we will stick together till the end. I love you and Happy Valentine's Day, love! ❤️
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <div class="audio-container">
+        <button id="playPauseBtn" onclick="toggleAudio()">Play</button>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="d:\Valentine\love.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const audio = document.getElementById('backgroundMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        }
+    </script>
+</body>
+</html>
